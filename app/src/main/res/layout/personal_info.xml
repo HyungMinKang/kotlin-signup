@@ -37,7 +37,10 @@
             android:id="@+id/edit_text_birthdate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="datetime" />
+            android:inputType="datetime"
+            android:cursorVisible="false"
+            android:focusable="false"
+            />
 
     </com.google.android.material.textfield.TextInputLayout>
 
