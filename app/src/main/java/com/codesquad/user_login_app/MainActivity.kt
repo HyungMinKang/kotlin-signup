@@ -2,6 +2,7 @@ package com.codesquad.user_login_app
 
 
 import android.content.Intent
+import android.icu.number.Scale.none
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -31,6 +32,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         initView()
         checkValidation()
+        setNextBtnListener()
     }
 
     private fun initView() {
@@ -162,5 +164,12 @@ class MainActivity : AppCompatActivity() {
         nextBtn.isEnabled = idFlag&&passwordFlag&&passwordConfirmFlag&&nameFlag
     }
 
+    private fun setNextBtnListener(){
+        nextBtn.setOnClickListener {
+            val intent= Intent(this, PersonalInformationActivity::class.java)
+            startActivity(intent)
+            overridePendingTransition(0, R.anim.slide_right_enter)
+        }
+    }
 
 }
